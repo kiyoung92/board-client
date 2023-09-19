@@ -1,2 +1,0 @@
-# board-client
-board-client
