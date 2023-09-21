@@ -1,5 +1,9 @@
-export function MainBody() {
+import { MainCard } from "./card"
+
+export const MainBody = () => {
     return (
-        <div></div>
+        <div>
+            <MainCard></MainCard>
+        </div>
     )
 }
