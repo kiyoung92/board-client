@@ -4,7 +4,7 @@ export const MainHeaderStyle = {
     wrap: css`
         height: 60px;
         width: 100%;
-        border-bottom: var(--border-bottom);
+        border-bottom: var(--border);
         display: flex;
         justify-content: center;
         align-items: center;
