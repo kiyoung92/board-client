@@ -1,11 +1,12 @@
+// import { Login } from './views/login'
+import { Main } from './views/main';
 
 function App() {
   return (
     <div>
-      <header>
-        <h1>hellWorld</h1>
-      </header>
+      <Main></Main>
     </div>
+    // <Login></Login>
   );
 }
 
