@@ -1,24 +1,3 @@
-html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  top: 0px;
-  left: 0px;
-}
-
-body {
-  font-family: 'SUIT', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 :root {
   --background-color: #fefefe;
   --button-background-color: #007fff;
@@ -31,4 +10,24 @@ code {
   --button-background-color: #0064ff;
   --text-color: #ccc;
   --border: 0.5px solid #efefef;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  color: var(--text-color);
+}
+
+body {
+  font-family: 'SUIT', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

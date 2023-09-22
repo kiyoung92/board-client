@@ -1,7 +1,7 @@
 export const MainBody = () => {
   return (
     <div>
-      <div></div>
+      <div>MainBody</div>
     </div>
   );
 };
