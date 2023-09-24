@@ -34,7 +34,7 @@ const SignInStyle = {
 
 export const SignIn = ({ isOpen }) => {
   return (
-    <ReactModal isOpen={isOpen} css={SignInStyle.wrap} closeTimeoutMS={2000}>
+    <ReactModal isOpen={isOpen} css={SignInStyle.wrap}>
       <div css={SignInStyle.contentsWrap}>
         {/* <div css={SignInStyle.closeBtn} onClick={signInModalClose}>
           X
