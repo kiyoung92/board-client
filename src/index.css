@@ -26,6 +26,9 @@ body {
 
 #root {
   width: 1280px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 body {
@@ -36,4 +39,17 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
 }

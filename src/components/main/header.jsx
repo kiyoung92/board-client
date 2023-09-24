@@ -1,6 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SignIn } from '../../views/sign-in';
+import { SignUp } from '../../views/sign-up';
 
 const MainHeaderStyle = {
   wrap: css`
@@ -28,21 +31,35 @@ const MainHeaderStyle = {
 };
 
 export const MainHeader = () => {
+  const [isSignInOpen, setSignInOpen] = useState(false);
+  const [isSignUpOpen, setSignUpOpen] = useState(false);
+
+  const signInModalOpen = () => {
+    setSignInOpen(true);
+  };
+  const signUpModalHandler = () => {
+    setSignUpOpen(true);
+  };
+
   return (
     <div css={MainHeaderStyle.wrap}>
-      <div>LOGO</div>
+      <Link to='/' css={MainHeaderStyle.authItem}>
+        LOGO
+      </Link>
       <div css={MainHeaderStyle.contents}>
         <p>content</p>
         <p>content</p>
         <p>content</p>
       </div>
       <div css={MainHeaderStyle.auth}>
-        <Link to='/signIn' css={MainHeaderStyle.authItem}>
+        <div onClick={signInModalOpen}>
           <p>Sign In</p>
-        </Link>
-        <Link to='/signUp' css={MainHeaderStyle.authItem}>
+          <SignIn isOpen={isSignInOpen}></SignIn>
+        </div>
+        <div onClick={signUpModalHandler}>
           <p>Sign Up</p>
-        </Link>
+          <SignUp isOpen={isSignUpOpen}></SignUp>
+        </div>
       </div>
     </div>
   );

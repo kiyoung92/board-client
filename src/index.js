@@ -7,6 +7,9 @@ import { RecoilRoot } from 'recoil';
 import { BrowserRouter } from 'react-router-dom';
 import { MainHeader } from './components/main/header';
 import { MainFooter } from './components/main/footer';
+import ReactModal from 'react-modal';
+
+ReactModal.setAppElement('#root');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
