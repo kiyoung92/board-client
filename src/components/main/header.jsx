@@ -40,7 +40,7 @@ export const MainHeader = () => {
         <Link to='/signIn' css={MainHeaderStyle.authItem}>
           <p>Sign In</p>
         </Link>
-        <Link Link to='/signUp' css={MainHeaderStyle.authItem}>
+        <Link to='/signUp' css={MainHeaderStyle.authItem}>
           <p>Sign Up</p>
         </Link>
       </div>
