@@ -1,7 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { MainHeader } from '../components/main/header';
 import { MainBody } from '../components/main/body';
-import { MainFooter } from '../components/main/footer';
 import { css } from '@emotion/react';
 // import { Link } from 'react-router-dom';
 
@@ -23,9 +21,7 @@ export const Main = () => {
   return (
     <div css={MainStyle.wrap}>
       <div css={MainStyle.contents}>
-        <MainHeader></MainHeader>
         <MainBody></MainBody>
-        <MainFooter></MainFooter>
       </div>
     </div>
   );
