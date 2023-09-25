@@ -34,11 +34,13 @@ export const MainHeader = () => {
   const [isSignInOpen, setSignInOpen] = useState(false);
   const [isSignUpOpen, setSignUpOpen] = useState(false);
 
-  const signInModalOpen = () => {
-    setSignInOpen(true);
+  const signInModalOpen = (is, e) => {
+    e.preventDefault();
+    setSignInOpen(is);
   };
-  const signUpModalHandler = () => {
-    setSignUpOpen(true);
+  const signUpModalHandler = (is, e) => {
+    e.preventDefault();
+    setSignUpOpen(is);
   };
 
   return (
@@ -52,14 +54,14 @@ export const MainHeader = () => {
         <p>content</p>
       </div>
       <div css={MainHeaderStyle.auth}>
-        <div onClick={signInModalOpen}>
+        <div onClick={(e) => {signInModalOpen(true, e)}}>
           <p>Sign In</p>
-          <SignIn isOpen={isSignInOpen}></SignIn>
         </div>
-        <div onClick={signUpModalHandler}>
+        <div onClick={(e) => {signUpModalHandler(true, e)}}>
           <p>Sign Up</p>
-          <SignUp isOpen={isSignUpOpen}></SignUp>
         </div>
+        <SignIn isOpen={isSignInOpen} modalHandler={signInModalOpen}></SignIn>
+        <SignUp isOpen={isSignUpOpen} modalHandler={signUpModalHandler}></SignUp>
       </div>
     </div>
   );

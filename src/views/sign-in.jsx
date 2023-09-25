@@ -2,6 +2,8 @@
 import { css } from '@emotion/react';
 import { CommonInput } from '../components/common/input';
 import ReactModal from 'react-modal';
+import { useState } from 'react';
+import axios from 'axios';
 
 const SignInStyle = {
   wrap: css`
@@ -32,16 +34,35 @@ const SignInStyle = {
   `,
 };
 
-export const SignIn = ({ isOpen }) => {
+export const SignIn = ({ isOpen, modalHandler }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const signInHandler = async (e) => {
+    e.preventDefault();
+    const response = await axios.post('http://localhost:3000/auth/login', {
+      email: email,
+      password: password,
+    }, { withCredentials: true }).then(res => {
+      return res.data;
+    }).catch(err => {
+      console.log(err);
+    })
+
+    modalHandler(false, e);
+    console.log(response);
+  }
+  
   return (
-    <ReactModal isOpen={isOpen} css={SignInStyle.wrap}>
-      <div css={SignInStyle.contentsWrap}>
-        {/* <div css={SignInStyle.closeBtn} onClick={signInModalClose}>
+    <ReactModal isOpen={isOpen} css={SignInStyle.wrap} closeTimeoutMS={200}>
+      <form css={SignInStyle.contentsWrap} onSubmit={signInHandler}>
+        <div css={SignInStyle.closeBtn} onClick={(e) => {modalHandler(false, e)}}>
           X
-        </div> */}
-        <CommonInput placeholder='아이디를 입력해 주세요.' type='text' />
-        <CommonInput placeholder='패스워드를 입력해 주세요.' type='password' />
-      </div>
+        </div>
+        <CommonInput placeholder='아이디를 입력해 주세요.' type='text' onChangeEvent={setEmail}/>
+        <CommonInput placeholder='패스워드를 입력해 주세요.' type='password' onChangeEvent={setPassword}/>
+        <button>로그인</button>
+      </form>
     </ReactModal>
   );
 };
