@@ -59,8 +59,8 @@ export const SignIn = ({ isOpen, modalHandler }) => {
         <div css={SignInStyle.closeBtn} onClick={(e) => {modalHandler(false, e)}}>
           X
         </div>
-        <CommonInput placeholder='아이디를 입력해 주세요.' type='text' onChangeEvent={setEmail}/>
-        <CommonInput placeholder='패스워드를 입력해 주세요.' type='password' onChangeEvent={setPassword}/>
+        <CommonInput placeholder='아이디를 입력해 주세요.' type='text' onChangeEvent={setEmail} tapIndex='0'/>
+        <CommonInput placeholder='패스워드를 입력해 주세요.' type='password' onChangeEvent={setPassword} tapIndex='1'/>
         <button>로그인</button>
       </form>
     </ReactModal>

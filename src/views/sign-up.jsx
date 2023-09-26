@@ -60,9 +60,9 @@ export const SignUp = ({ isOpen, modalHandler }) => {
         <div css={SignUpStyle.closeBtn} onClick={(e) => {modalHandler(false, e)}}>
           X
         </div>
-        <CommonInput placeholder='아이디를 입력해 주세요.' type='text' onChangeEvent={setEmail}/>
-        <CommonInput placeholder='패스워드를 입력해 주세요.' type='password' onChangeEvent={setPassword}/>
-        <CommonInput placeholder='이름을 입력해 주세요.' type='text' onChangeEvent={setName}/>
+        <CommonInput placeholder='아이디를 입력해 주세요.' type='text' onChangeEvent={setEmail} tapIndex='0'/>
+        <CommonInput placeholder='패스워드를 입력해 주세요.' type='password' onChangeEvent={setPassword} tapIndex='1'/>
+        <CommonInput placeholder='이름을 입력해 주세요.' type='text' onChangeEvent={setName} tapIndex='2'/>
         <button>가입하기</button>
       </form>
     </ReactModal>

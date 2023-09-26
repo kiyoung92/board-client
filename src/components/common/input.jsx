@@ -41,15 +41,15 @@ const CommonStyle = {
   `,
 };
 
-export const CommonInput = ({ placeholder, type, onChangeEvent }) => {
+export const CommonInput = ({ placeholder, type, onChangeEvent, tapIndex }) => {
   const inputChangeHandler = (e) => {
     e.preventDefault();
     onChangeEvent(e.target.value)
   }
-  
+
   return (
     <div css={CommonStyle.underlineInputWrap}>
-      <input css={CommonStyle.underlineInput} type={type} placeholder={placeholder} onChange={inputChangeHandler} />
+      <input css={CommonStyle.underlineInput} type={type} placeholder={placeholder} onChange={inputChangeHandler} tabIndex={tapIndex}/>
       <div css={CommonStyle.inputUnderline}></div>
     </div>
   );
